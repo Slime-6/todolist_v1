@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav id="navbar">
+        <div id="navbar_container">
+            <a href="index.html" id="navbar_logo_text">To-Do List <img id="navbar_logo_icon" src="images/todo-icon.png" alt="todo-icon"></a>
+            <div id="navbar_items">
+                <button class="default_button" id="navbar_button" onclick="showForm()">Task hinzufügen</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="main_container">
+            <div id="list_container">
+                <div class="task_container">
+                    <div class="list_header">
+                        <span>To-Do</span>
+                    </div>
+                    <ul class="task_list" id="task_list_todo" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                </div>
+                <div class="task_container">
+                    <div class="list_header">
+                        <span>In Progress</span>
+                    </div>
+                    <ul class="task_list" id="task_list_progress" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                </div>
+                <div class="task_container">
+                    <div class="list_header">
+                        <span>Done</span>
+                    </div>
+                    <ul class="task_list" id="task_list_done" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+                </div>
+            </div>
+
+            <div id="delete_container">
+                <p id="delete_text" ondrop="dropDelete(event)" ondragover="allowDrop(event)"><br><br>Task Löschen</p>
+            </div>
+
+            <div id="task_form">
+                <button class="default_button" id="x_button" onclick="hideForm()">x</button>
+                <div id="task_input_container">
+                    <input type="text" id="task_name" name="task_name" placeholder="Task Name">
+                    <button class="default_button" id="form_button" onclick="addTask()">Hinzufügen</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
